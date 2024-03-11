@@ -1,4 +1,23 @@
+<h1>users/show</h1>
+
 <h1>Books</h1>
 
 <p>Title</p>
+  <p><%= @book.title %></p>
 <p>Opinion</p>
+  <P><%= @book.body %></P>
+
+<h1>New book</h1>
+
+<%= form_with model: @book do |f| %>
+
+  <h4>Title</h4>
+    <%= f.text_field :title %>
+  <h4>Opinion</h4>
+    <%= f.text_field :body %>
+
+  <table>
+    <td><%= f.submit 'Create Book' %></td>
+  </table>
+
+<% end %>
