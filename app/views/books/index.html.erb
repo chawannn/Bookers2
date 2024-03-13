@@ -1,21 +1,13 @@
+<h2>Books</h2>
+
+<h3>Title</h3>
+<h3>Opinion</h3>
+
 
 <% @books.each do |book| %>
 
-  <div>
-    <%= image_tag book.get_image %>
-      <span>
-        <%= link_to user.name, user_path(@user.id) %>
-      </span>
-
-    <p>Title</p>
-      <span>
-        <%= link_to book.title, book_path(@book.id) %>
-      </span>
-    <p>Opinion</p>
-      <span>
-        <%= book.body %>
-      </span>
-
-  </div>
+  <%= image_tag book.get_image %>
+  <%= link_to book.title, book_path(book.id) %>
+  <%= book.body %>
 
 <% end %>

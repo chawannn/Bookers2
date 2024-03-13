@@ -1,11 +1,16 @@
-<h1>users/show</h1>
-
 <h1>Books</h1>
 
-<p>Title</p>
-  <p><%= @book.title %></p>
-<p>Opinion</p>
-  <P><%= @book.body %></P>
+<h5>Title</h5>
+<h5>Opinion</h5>
+
+<% @books.each do |book| %>
+
+    <%= link_to book.title, book_path(book.id) %>
+    <%= book.body %>
+
+<% end %>
+
+
 
 <h1>New book</h1>
 

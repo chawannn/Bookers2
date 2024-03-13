@@ -1,1 +1,14 @@
-<h1>Indexページ</h1>
+<h1>Users</h1>
+
+<h5>image</h5>
+<h5>name</h5>
+
+  <% @users.each do |user| %>
+    <div>
+      <p><%= image_tag user.get_profile_image(100,100) %></p>
+      <p><%= user.name %></p>
+    </div>
+    <%= link_to "Show", user_path(user.id) %>
+  <% end %>
+
+
