@@ -6,11 +6,13 @@
 <% @books.each do |book| %>
 
     <%= link_to book.title, book_path(book.id) %>
-    <%= book.body %>
+    <%= book.body %>s
 
 <% end %>
 
+<h1>User info</h1>
 
+  <%= render "books/new", user: @user, book: @book %>
 
 <h1>New book</h1>
 
