@@ -3,10 +3,10 @@
 <%= image_tag current_user.get_profile_image(100,100) %>
 
 <h4>name</h4>
-  <%= current_user.name, current_user %>
+  <%= current_user.name %>
 
 <h4>introduction</h4>
-<%= current_user.introduction, current_user %>
+  <%= current_user.introduction %>
 
 <%= link_to "Edit", edit_user_path(user.id) %>
 
