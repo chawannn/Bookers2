@@ -12,86 +12,81 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-
   <body class="d-flex flex-column vh-100">
-    <header>
-
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <header class="shadow-sm bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-          <a class="navbar-brand" href="/"><h3>Bookers</h3></a>
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          <a class="navbar-brand p-3 " href="/" style="color: white;"><h3>Bookers</h3></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-          <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto">
 
           <% if user_signed_in? %>
-            <a class="col nav-link text-light px-1 py-1">
-            <%= link_to user_path(current_user.id) do %>
+
+            <%= link_to user_path(current_user.id), class:" nav-link text-light" do %>
               <i class="fa-solid fa-house"></i><h8>Home</h8>
             <% end %>
-            </a>
-            <a class="col nav-link text-light px-1 py-1">
-            <%= link_to users_path do %>
+
+
+            <%= link_to users_path, class:"nav-link text-light" do %>
               <i class="fa-solid fa-users"></i><h8>Users</h8>
             <% end %>
-            </a>
-            <a class="col nav-link text-light px-1 py-1">
-            <%= link_to books_path do %>
+
+
+            <%= link_to books_path, class:"nav-link text-light" do %>
               <i class="fa-solid fa-book-open"></i><h8>Books</h8>
             <% end %>
-            </a>
-            <a class="col nav-link text-light px-1 py-1">
-            <%= link_to destroy_user_session_path, method: :delete do %>
+
+
+            <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do %>
               <i class="fa-solid fa-right-from-bracket"></i><h8>Log out</h8>
             <% end %>
-            </a>
+
           <% else %>
-            <a class="row nav-link text-light px-1 py-1">
-            <%= link_to root_path do %>
+
+            <%= link_to root_path, class:"nav-link text-light" do %>
               <i class="fa-solid fa-house"></i><h8>Home</h8>
             <% end %>
-            </a>
-            <a class="row nav-link text-light px-1 py-1">
-            <%= link_to about_path do %>
+
+
+            <%= link_to about_path, class:"nav-link text-light" do %>
               <i class="fa-solid fa-link"></i><h8>About</h8>
             <% end %>
-            </a>
-            <a class="row nav-link text-light px-1 py-1">
-            <%= new_user_registration_path do %>
+
+
+            <%= link_to new_user_registration_path, class:"nav-link text-light" do %>
               <i class="fa-solid fa-user-plus"></i><h8>Sign up</h8>
             <% end %>
-            </a>
-            <a class="row nav-link text-light px-1 py-1">
-            <%= link_to new_user_session_path do %>
+
+
+            <%= link_to new_user_session_path, class:"nav-link text-light" do %>
               <i class="fa-solid fa-right-to-bracket"></i><h8>Log in</h8>
             <% end %>
-            </a>
-          <% end %>
 
-          </div>
+          <% end %>
 
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <main class="mb-auto">
-
+    <main>
     <%= yield %>
     </main>
 
-    <footer class="bg-white text-dark pt-5 pb-4">
-      <div class="container">
-        <div class="row  justify-content-center">
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
             <p>CopyRight Infratop.inc</p>
           </div>
         </div>
       </div>
     </footer>
+
 
   </body>
 
