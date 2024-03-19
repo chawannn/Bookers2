@@ -1,27 +1,45 @@
-<h1>User info</h1>
 
-<%= image_tag current_user.get_profile_image(100,100) %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>User info</h2>
+      <%= image_tag current_user.get_profile_image(100,100) %>
+      <table class="table">
+        <tbody>
+          <tr></tr>
+          <tr>
+            <th>name</th>
+            <th><%= current_user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= current_user.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <a class="btn btn-outline-secondary btn-block edit_user_path(user.id)">
+        <i class="fa-solid fa-user-gear"></i>
+        </a>
+      </div>
 
-<h4>name</h4>
-  <%= current_user.name %>
 
-<h4>introduction</h4>
-  <%= current_user.introduction %>
+      <h2>New book</h2>
 
+      <%= form_with model: book do |f| %>
 
-<%= link_to edit_user_path(user.id) do %>
-  <i class="fa-solid fa-user-gear"></i>
-<% end %>
-
-<h1>New book</h1>
-
-<%= form_with model: book do |f| %>
-
-  <h4>Title</h4>
+      <h4>Title</h4>
     <%= f.text_field :title %>
   <h4>Opinion</h4>
     <%= f.text_field :body %><br />
 
     <%= f.submit 'Create Book' %>
 
+<% end %>
+</div>
+</div>
+</div>
+
+<%= link_to edit_user_path(user.id) do %>
+  <i class="fa-solid fa-user-gear"></i>
 <% end %>
