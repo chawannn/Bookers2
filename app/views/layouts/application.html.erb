@@ -66,6 +66,10 @@
               <i class="fa-solid fa-right-to-bracket"></i><h8> Log in</h8>
             <% end %>
 
+            <% flash.each do |message_type, message| %>
+              <%= content_tag :div, message, class: message_type %>
+            <% end %>
+
           <% end %>
 
             </ul>
